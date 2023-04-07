@@ -44,7 +44,7 @@ function getMostCommonGenres(books) {
 
 function getMostPopularBooks(books) {
   let popBooks = [];
-  books.reduce((book) => {
+  books.reduce((acc, book) => {
     popBooks.push ({ name: book.title, count: book.borrows.length});
   }, [])
   return organizeFive(popBooks);
