@@ -52,13 +52,13 @@ function getMostPopularBooks(books) {
 
 function getMostPopularAuthors(books, authors) {
   let result = [];
-  authors.forEach((person) => {
+  authors.forEach((author) => {
    let person = {
-    name: `${person.name.first} ${person.name.last}`,
+    name: `${author.name.first} ${author.name.last}`,
     count: 0
    };
    books.forEach((book) => {
-    if (book.authorId === authors.id) {
+    if (book.authorId === author.id) {
      person.count += book.borrows.length;
     }
    });
